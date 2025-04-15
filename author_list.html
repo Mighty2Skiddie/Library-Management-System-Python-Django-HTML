@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authors</title>
+</head>
+<body>
+    <h2>All Authors</h2>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.name }} - {{ author.email }}</li>
+        {% empty %}
+            <li>No authors found.</li>
+        {% endfor %}
+    </ul>
+
+    <div>
+        {% if is_paginated %}
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <br>
+    <a href="{% url 'add-author' %}">➕ Add New Author</a> |
+    <a href="{% url 'home' %}">🏠 Home</a>
+</body>
+</html>
+
