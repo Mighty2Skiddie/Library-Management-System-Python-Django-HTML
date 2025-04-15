@@ -1,0 +1,28 @@
+<!-- library/templates/library/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Library</title>
+</head>
+<body>
+    <h1>Welcome to the Library</h1>
+    <h2>📚 Library Home</h2>
+<ul>
+  
+    <li><a href="{% url 'add-author' %}">➕ Add Author</a></li>
+    <li><a href="{% url 'add-book' %}">➕ Add Book</a></li>
+    <li><a href="{% url 'add-borrow' %}">➕ Add Borrow Record</a></li>
+    <li><a href="{% url 'author-list' %}">👨‍🏫 View Authors</a></li>
+    <li><a href="{% url 'book-list' %}">📚 View Books</a></li>
+    <li><a href="{% url 'borrow-list' %}">🔁 View Borrow Records</a></li>
+    <li><a href="{% url 'export-excel' %}">📥 Export All to Excel</a></li>
+</ul>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,89 @@
+<!-- base.html -->
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Library System{% endblock %}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Books_HD.jpg/1920px-Books_HD.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #00BFFF;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1E90FF;
+        }
+
+        a {
+            color: #90EE90;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

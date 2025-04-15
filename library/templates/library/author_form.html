@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Author</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url('https://images.app.goo.gl/eJTpcECsGFiGHw7Q7'); /* you can change this */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #00BFFF;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1E90FF;
+        }
+
+        a {
+            color: #90EE90;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>➕ Add Author</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+        <a href="{% url 'author-list' %}">← Back to Author List</a> |
+        <a href="{% url 'home' %}">🏠 Home</a>
+    </div>
+</body>
+</html>
